@@ -1,0 +1,13 @@
+Creating Github Repo
+1. Create new in Github
+2. Create directory on local same as repo name
+3. git init
+4. create file
+5. git add -A
+6. git commit -m "<message>"
+7. git remote add origin <GitHub URL of new repo>
+8. git push
+
+NOTE: If not using main as branch
+git branch -M main
+git push -u origin main
