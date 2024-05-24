@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  </head>
+  <body>
+    <div style="color: red; font-family: Lucida Console, Courier New, monospace; font-size: oblique">Hello World</div>
+    <input type="button" value="Press" onClick=onPress()></input>
+    
+    <div>
+    <input type="button" value="Get Joke" onClick=api()></input>
+    <div>Joke:<input type="text" id="joke" style="width: 600px;"></input></div>
+    <div>Punchline:<input type="text" id="punch" style="width: 600px;"></input></div>
+    
+    </div>
+
+    <script>
+function onPress()
+{
+	alert("You win!!!");
+}
+
+function api()
+{
+// Define the API URL
+const apiUrl = 'https://official-joke-api.appspot.com/random_joke/';
+
+// Make a GET request
+fetch(apiUrl)
+  .then(response => {
+    if (!response.ok) {
+      throw new Error('Network response was not ok');
+    }
+    return response.json();
+  })
+  .then(data => {
+    console.log(data);
+    console.log(data.setup);
+    var joke = document.getElementById("joke");
+    var punch = document.getElementById("punch");
+    joke.value = data.setup;
+    punch.value = data.punchline;
+  })
+  .catch(error => {
+    console.error('Error:', error);
+  });
+}
+    </script>
+  </body>
+</html>
