@@ -18,7 +18,7 @@
     <script>
 function onPress()
 {
-	alert("You win!!!");
+  //create an alert message
 }
 
 function api()
@@ -35,12 +35,7 @@ fetch(apiUrl)
     return response.json();
   })
   .then(data => {
-    console.log(data);
-    console.log(data.setup);
-    var joke = document.getElementById("joke");
-    var punch = document.getElementById("punch");
-    joke.value = data.setup;
-    punch.value = data.punchline;
+    //log data and update UI
   })
   .catch(error => {
     console.error('Error:', error);

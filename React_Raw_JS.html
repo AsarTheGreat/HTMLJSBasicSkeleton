@@ -55,146 +55,29 @@
     </div>
     <script>
     //Constant are variables that are not supposed to change.
-    var likePizza = true;
-    likePizza = false;
-    var pizzaSpan = document.getElementById("PizzaId");
-	pizzaSpan.textContent = "Do we like Pizza: " + likePizza;
-    //console.log('Do we like Pizza:', likePizza);
     
-    const likeSoccer = false;
-    //likeSoccer = true;
-    var soccerSpan = document.getElementById("SoccerId");
-	soccerSpan.textContent = "Do we like Soccer: " + likeSoccer;
-    //console.log('Do we like Soccer:', likeSoccer);
-    
-    //let variables are scope specific
-    var topic = 'JavaScript';
-    var IfTopicSpan = document.getElementById("IfTopicId");
-    var OutsideIfTopicSpan = document.getElementById("OutsideIfTopicId");
-    if(topic)
-    {
-	    //Change datatype to let
-	    let topic = 'React';
-        IfTopicSpan.textContent = "topic in if block:" + topic;
-	    //console.log('topic in if block:', topic);
-    }
-    OutsideIfTopicSpan.textContent = "topic outside if block:" + topic;
-    //console.log('topic outside if block:', topic);
     ////////////////////////////////////////////////////////////////////////////////
     
     //looping counting through list of objects or things
-    var loopList = document.getElementById("loopList");
-    const max = 10;
-    for(let i = 0; i < max; i++)
-    {
-        var liItem = document.createElement('li');
-        liItem.append(document.createTextNode('loop counter:'+i));
-        loopList.append(liItem);
-    }
+    
     ////////////////////////////////////////////////////////////////////////////////
     
     //functions
-    function logCompliment()
-    {
-        var complimentSpan = document.getElementById("complimentId");
-        complimentSpan.textContent = "learning React";
-    }
-    logCompliment();
-    
-    var logCompSpan = document.getElementById("logCompId");
-    const logComp = function(){
-        logCompSpan.textContent = 'Another React compliment';
-    };
-    logComp();
-    
-    //Passing arguments
-    var sayHelloSpan = document.getElementById("sayHelloId");
-    const sayHello = function(name) {
-        sayHelloSpan.textContent = `Hello, ${name}`;
-    };
-    sayHello("Nupe");
-    
-    var leaveMessageSpan = document.getElementById("leaveMessageId");
-    const leaveMessage = function(name, message) {
-        leaveMessageSpan.textContent = `${name}, ${message}`;
-    };
-    leaveMessage("Kierra", "React is a fun language");
-    
-    //Converting to arrow functions
-    var ArrSayHelloSpan = document.getElementById("ArrSayHelloId");
-    const ArrSayHello = name => `Hello from arrow func, ${name}`;    
-    ArrSayHelloSpan.textContent = ArrSayHello("Mike");
-    
-    var ArrLeaveMessageSpan = document.getElementById("ArrLeaveMessageId");
-    const ArrLeaveMessage = (name, message) => `${name}, ${message}`;
-    ArrLeaveMessageSpan.textContent = ArrLeaveMessage("Erin", "My kids are learning React");
     ////////////////////////////////////////////////////////////////////////////////    
+    
     //Conditions Pose question to determine how number is even or odd?
-    var isEvenSpan = document.getElementById("isEvenId");
-    const isEven = num => {
-	    if(num%2 == 0)
-	    {
-		    isEvenSpan.textContent = `${num} is even`;
-	    }
-	    else
-	    {
-		    isEvenSpan.textContent =`${num} is odd`;
-	    }
-    };
-    isEven(50);
+    
     ////////////////////////////////////////////////////////////////////////////////
     //Object and Arrays Pose question to get old age?
     //Printing array object
-    var arrList = ["DC", "VA", "MD"];
-    var arrListUl = document.getElementById("arrListId");
-    for(let i = 0; i < arrList.length; i++)
-    {
-        var arrItem = document.createElement('li');
-        arrItem.append(document.createTextNode(arrList[i]));
-        arrListUl.append(arrItem);
-    }
 
     //Object
-    var isYoungSpan = document.getElementById("isYoungId");
-    var person = {
-    name:"Kierra",
-    age:45
-    }
-    
-    const isYoung = p => {
-	if(p.age < 40)
-	{
-        isYoungSpan.textContent = `${p.name}, you are still young`;
-	}
-	else
-	{
-        isYoungSpan.textContent = `${p.name}, you are ${p.age} years old. Gramps...`;
-	}
-    };
-    isYoung(person);
     
     //Updating values in object
-    person.age = 65;
-    person.name = "Jasmine";
-
-    var PersonUpdateSpan = document.getElementById("PersonUpdateId");
-    PersonUpdateSpan.textContent = `Name:${person.name},Age:${person.age}`;
     
     
     
     //Spread operator
-    var combArraySpan = document.getElementById("combArrayId");
-    const veggie = ["greens", "beans", "potatoes"];
-    const meat = ["chicken", "turkey", "tomatoes"]
-    const combArray = [...veggie,...meat];
-    combArraySpan.textContent = combArray.join(",");
-    
-    console.log('List before',arrList.join(","));
-    var [first, ...rest] = arrList;
-    console.log('First in list:',first);
-    console.log('List before',arrList.join(","));
-    var [last] = [...arrList].reverse();
-    console.log('Last in list:',last);
     </script>
   </body>
 </html>
